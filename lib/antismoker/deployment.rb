@@ -30,8 +30,9 @@ module AntiSmoker
           args += context.fetch(:antismoker_flags, [])
           args << "RAILS_ENV=#{rails_env}"
 
+          run_opts = context.fetch(:antismoker_run_options, {})
           begin
-            run "cd #{app_path} && #{rake_cmd} #{args.join(' ')} #{antismoker_task}"
+            run "cd #{app_path} && #{rake_cmd} #{args.join(' ')} #{antismoker_task}", run_opts
             antismoker_success
           rescue
             antismoker_failure
