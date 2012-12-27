@@ -13,7 +13,7 @@ module AntiSmoker
         error_type = ::Rake::CommandFailedError
       end
 
-      roles = context.fetch(:antismoker_roles, false)
+      roles = context.fetch(:antismoker_roles, [:app])
       opts[:roles] = roles if roles
 
       context.send :namespace, :antismoker do
