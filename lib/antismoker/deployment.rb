@@ -33,8 +33,7 @@ module AntiSmoker
           begin
             run "cd #{app_path} && #{rake_cmd} #{args.join(' ')} #{antismoker_task}"
             antismoker_success
-          rescue => error
-            logger.info("[ERROR] #{error}")
+          rescue
             antismoker_failure
           ensure
             finalize_antismoker
