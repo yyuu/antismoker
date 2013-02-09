@@ -36,6 +36,7 @@ module AntiSmoker
             antismoker_success
           rescue
             antismoker_failure
+            abort
           ensure
             finalize_antismoker
           end
