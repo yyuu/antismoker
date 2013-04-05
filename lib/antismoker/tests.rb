@@ -34,7 +34,7 @@ module AntiSmoker
       while Time.now < deadline
         STDOUT.putc(?.)
         STDOUT.flush
-        sleep(n / 3)
+        sleep(n.to_f / 3)
       end
     end
 
